@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>주식회사 기장엔지니어링</title>
+    
+	<link href="./bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="./bootstrap/font/bootstrap-icons.css" rel="stylesheet">
+	<link href="./main.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Navbar (fixed-top) -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top pt-4 shadow-sm">
+    <div class="container">
+		<a class="navbar-brand fw-bold" href="./index.html">
+			<img src="./logo.png" alt="회사 로고" width="40" height="40" class="me-2">
+			(주)기장엔지니어링
+		</a>
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse justify-content-end fw-semibold" id="navbarNav">
+			<ul class="navbar-nav">
+				<li class="nav-item">
+					<a class="nav-link" href="./about.html">회사소개</a>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">사업분야</a>
+					<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<li><a class="dropdown-item" href="./business.html?section=supervising">- 소방공사 감리</a></li>
+						<li><a class="dropdown-item" href="./business.html?section=design">- 소방시설 설계</a></li>						
+						<li><a class="dropdown-item" href="./business.html?section=diagnosis">- 에너지 진단 전문</a></li>
+						<li><a class="dropdown-item" href="./business.html?section=esco">- ESCO 사업</a></li>
+						<li><a class="dropdown-item" href="./business.html?section=planning">- 에너지사용계획 사업</a></li>
+						<li><a class="dropdown-item" href="./business.html?section=tabcom">- T.A.B커미셔닝 사업</a></li>
+						<li><a class="dropdown-item" href="./business.html?section=inspection">- 기계 설비 성능 점검</a></li>
+						<li><a class="dropdown-item" href="./business.html?section=verification">- 터널 제연설비 성능검증 사업</a></li>
+					</ul>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="./performance.html">주요실적</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="./contact.html">고객지원</a>
+				</li>
+			</ul>
+		</div>
+    </div>
+</nav>
+
+<!-- About Section with Carousel -->
+<section id="about" class="">
+	<div class="container-fluid position-relative">    
+		<!-- Carousel Section -->
+		<div id="companyCarousel" class="carousel slide" data-bs-ride="carousel">
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<img src="./1.png" class="d-block" alt="이미지 1">
+					<div class="text-overlay">
+						<h1 class="fade-in fw-bold">환경친화적인 기업</h1>
+						<p class="fade-in delay">사람과 자연이 공존하는 세상을 추구합니다.1</p>
+					</div>
+				</div>
+				<div class="carousel-item">
+					<img src="./2.png" class="d-block" alt="이미지 2">
+					<div class="text-overlay">
+						<h1 class="fade-in fw-bold">환경친화적인 기업</h1>
+						<p class="fade-in delay">사람과 자연이 공존하는 세상을 추구합니다.2</p>
+					</div>
+				</div>
+				<div class="carousel-item">
+					<img src="./3.png" class="d-block" alt="이미지 3">
+					<div class="text-overlay">
+						<h1 class="fade-in fw-bold">환경친화적인 기업</h1>
+						<p class="fade-in delay">사람과 자연이 공존하는 세상을 추구합니다.3</p>
+					</div>
+				</div>
+			</div>
+			
+			<button class="carousel-control-prev" type="button" data-bs-target="#companyCarousel" data-bs-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">이전</span>
+			</button>
+			<button class="carousel-control-next" type="button" data-bs-target="#companyCarousel" data-bs-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">다음</span>
+			</button>
+		</div>
+	</div>
+</section>
+
+<section>
+
+	<div class="container marketing">
+		<div class="row">
+			<div class="col-lg-4">
+				<img class="bd-placeholder-img rounded-circle" width="240" height="240" src="./safe.png"></img>
+				<h2 class="fw-normal py-2">ESCO 사업</h2>
+				<p>에너지절약 전문기업(ESCO : Energy Service Conpany)으로 사용자에게 에너지절약 시설 또는 시스템을 제공 합니다.</p>
+				<p><a class="btn btn-secondary" href="#">자세히 &raquo;</a></p>
+			</div>
+			<div class="col-lg-4">
+				<img class="bd-placeholder-img rounded-circle" width="240" height="240" src="./safetyenergy.png"></img>
+				<h2 class="fw-normal py-2">에너지진단사업</h2>
+				<p>에너지사용시설 전반에 걸쳐 사업장의 에너지이용 현황 및 손실 요인 발굴 및 에너지절감을 위한 최적의 개선안을 제공 합니다.</p>
+				<p><a class="btn btn-secondary" href="./business.html?section=diagnosis">자세히 &raquo;</a></p>
+			</div>
+			<div class="col-lg-4">
+				<img class="bd-placeholder-img rounded-circle" width="240" height="240" src="./tab.png"></img>
+				<h2 class="fw-normal py-2">TAB커미셔닝사업</h2>
+				<p>건축물의 중요한 요소인 에너지사용과 관련하여 시스템의 계획, 설계, 시공, 성능시험 등을 제공하고 있습니다.</p>
+				<p><a class="btn btn-secondary" href="./business.html?section=tabcom">자세히 &raquo;</a></p>
+			</div>
+		</div>
+	</div>
+	
+	<div class="container marketing">
+		<div class="row">
+			<h4 class="border-bottom pb-2 mb-0"><b>New & Notice</b></h4>
+			<div class="col-lg-8">
+				<div class="mt-3 py-3 px-3 bg-body rounded border shadow" id="notice-list">
+					
+					<small class="d-block text-end mt-2">
+						<a href="./contact.html">More</a>
+					</small>
+				</div>
+			</div>
+			
+			<div class="col-lg-4">
+				<div class="h-100 mt-3 pt-4 px-4 text-white bg-dark rounded-3 rawdownload">
+					<h2>관계법령</h2>
+					<hr>
+					<i class="bi bi-file-earmark-pdf-fill"><a href="./fs/file001.pdf" target="_blank" class="rawdownload">&nbsp;건설기술진흥법</a></i><br>
+					<i class="bi bi-file-earmark-pdf-fill"><a href="./fs/file002.pdf" target="_blank" class="rawdownload">&nbsp;건설기술진흥법 시행규칙</a></i><br>
+					<i class="bi bi-file-earmark-pdf-fill"><a href="./fs/file003.pdf" target="_blank" class="rawdownload">&nbsp;건설기술진흥법 시행령</a></i><br>
+					<i class="bi bi-file-earmark-pdf-fill"><a href="./fs/file004.pdf" target="_blank" class="rawdownload">&nbsp;시설물 안전관리에 관한 시행규칙</a></i><br>
+					<i class="bi bi-file-earmark-pdf-fill"><a href="./fs/file005.pdf" target="_blank" class="rawdownload">&nbsp;시설물 안전관리에 관한 시행령</a></i><br>
+					<i class="bi bi-file-earmark-pdf-fill"><a href="./fs/file006.pdf" target="_blank" class="rawdownload">&nbsp;시설물 안전관리에 관한 특별법</a></i><br>
+					<i class="bi bi-file-earmark-pdf-fill"><a href="./fs/file007.pdf" target="_blank" class="rawdownload">&nbsp;에너지관리기준 해설서</a></i><br>
+					<i class="bi bi-file-earmark-pdf-fill"><a href="./fs/file008.pdf" target="_blank" class="rawdownload">&nbsp;에너지관리기준</a></i><br>
+					<i class="bi bi-file-earmark-pdf-fill"><a href="./fs/file009.pdf" target="_blank" class="rawdownload">&nbsp;에너지이용 합리화법 3단비교(진단)</a></i><br>
+					<i class="bi bi-file-earmark-pdf-fill"><a href="./fs/file010.pdf" target="_blank" class="rawdownload">&nbsp;에너지이용 합리화법 시행규칙 별표(진단)</a></i><br>
+					<i class="bi bi-file-earmark-pdf-fill"><a href="./fs/file011.pdf" target="_blank" class="rawdownload">&nbsp;에너지이용 합리화법 시행령 별표(진단)</a></i><br>
+					<i class="bi bi-file-earmark-pdf-fill"><a href="./fs/file012.pdf" target="_blank" class="rawdownload">&nbsp;에너지진단운영규정</a></i><br>
+				</div>
+			</div>
+
+		</div>		
+	</div>
+	
+</section>
+
+<!-- Footer -->
+<footer class="footer d-flex align-items-center">
+	<div class="footer-logo">
+		<img src="./footer_logo.png" alt="회사 로고">
+	</div>
+	<div class="footer-content ms-3">
+		<p class="m-0"><small>본사 : (04756) 서울특별시 성동구 마장로 293-2, 3층(마장동)</small></p>
+		<p class="m-0"><small>지사 : (04376) 서울특별시 용산구 한강대로 109, 1805호 (한강로2가, 용성비즈텔)</small></p>
+		<p class="m-0"><small>&copy; 2024 KI-JANG ENGINEERING. All Rights Reserved.</small></p>
+	</div>
+</footer>
+
+<button id="scrollToTopBtn" class="btn btn-light border">
+	<i class="bi bi-arrow-up"></i> <!-- Bootstrap 아이콘 사용 -->
+</button>
+
+<!-- Bootstrap JS -->
+<script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="./jquery/jquery-3.7.1.min.js"></script>
+<script src="./main.js"></script>
+<script src="./index.js"></script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>주식회사 기장엔지니어링</title>
+  
+	<link href="./bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="./bootstrap/font/bootstrap-icons.css" rel="stylesheet">
+	<link href="./main.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Navbar (fixed-top) -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top pt-4 shadow-sm">
+    <div class="container">
+		<a class="navbar-brand fw-bold" href="./index.html">
+			<img src="./logo.png" alt="회사 로고" width="40" height="40" class="me-2">
+			(주)기장엔지니어링
+		</a>
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse justify-content-end fw-semibold" id="navbarNav">
+			<ul class="navbar-nav">
+				<li class="nav-item">
+					<a class="nav-link" href="./about.html">회사소개</a>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">사업분야</a>
+					<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<li><a class="dropdown-item" href="./business.html?section=supervising">- 소방공사 감리</a></li>
+						<li><a class="dropdown-item" href="./business.html?section=design">- 소방시설 설계</a></li>						
+						<li><a class="dropdown-item" href="./business.html?section=diagnosis">- 에너지 진단 전문</a></li>
+						<li><a class="dropdown-item" href="./business.html?section=esco">- ESCO 사업</a></li>
+						<li><a class="dropdown-item" href="./business.html?section=planning">- 에너지사용계획 사업</a></li>
+						<li><a class="dropdown-item" href="./business.html?section=tabcom">- T.A.B커미셔닝 사업</a></li>
+						<li><a class="dropdown-item" href="./business.html?section=inspection">- 기계 설비 성능 점검</a></li>
+						<li><a class="dropdown-item" href="./business.html?section=verification">- 터널 제연설비 성능검증 사업</a></li>
+					</ul>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="./performance.html">주요실적</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="./contact.html">고객지원</a>
+				</li>
+			</ul>
+		</div>
+    </div>
+</nav>
+
+<section id="about">
+	<div class="container-fluid position-relative">
+		<div class="page-imgs">
+			<img src="./business.png" class="">		
+			<!-- Text overlay with animation -->
+			<div class="text-overlay">
+				<h1 class="fade-in fw-bold">기술의 다양화 및 전문화</h1>
+				<p class="fade-in delay p-0 m-0">탁월한 기술력으로 고객만족을 넘어선 가치를 창출합니다.</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- Business Section -->
+<section class="section mt-5 mb-5">
+	<div class="container">
+		<div class="business-section">        
+			<nav class="left-menu">
+				<h3>사업분야</h3>
+				<ul>
+					<li><a href="#" onclick="showContent('supervising')">- 소방공사 감리업</a></li>
+					<li><a href="#" onclick="showContent('design')">- 소방시설 설계업</a></li>	
+					<li><a href="#" onclick="showContent('diagnosis')">- 에너지진단 사업</a></li>
+					<li><a href="#" onclick="showContent('esco')">- ESCO 사업</a></li>
+					<li><a href="#" onclick="showContent('planning')">- 에너지사용계획 사업</a></li>
+					<li><a href="#" onclick="showContent('tabcom')">- T.A.B커미셔닝 사업</a></li>
+					<li><a href="#" onclick="showContent('firetab')">- 소방제연T.A.B 사업</a></li>
+					<li><a href="#" onclick="showContent('inspection')">- 기계설비 성능점검 사업</a></li>
+					<li><a href="#" onclick="showContent('verification')">- 터널 제연설비 성능검증 사업</a></li>			
+				</ul>
+			</nav>
+			<div class="right-content">
+				<div id="supervising" class="content-section">
+					1
+				</div>
+				<div id="design" class="content-section">2</div>
+				<div id="diagnosis" class="content-section">3</div>
+				<div id="esco" class="content-section">4</div>
+				<div id="planning" class="content-section">5</div>
+				<div id="tabcom" class="content-section">6</div>
+				<div id="firetab" class="content-section">7</div>
+				<div id="inspection" class="content-section">8</div>
+				<div id="verification" class="content-section">9</div>
+			</div>	
+		</div>
+	</div>
+</section>
+
+<!-- Footer -->
+<footer class="footer d-flex align-items-center">
+	<div class="footer-logo">
+		<img src="./footer_logo.png" alt="회사 로고">
+	</div>
+	<div class="footer-content ms-3">
+		<p class="m-0"><small>본사 : (04756) 서울특별시 성동구 마장로 293-2, 3층(마장동)</small></p>
+		<p class="m-0"><small>지사 : (04376) 서울특별시 용산구 한강대로 109, 1805호 (한강로2가, 용성비즈텔)</small></p>
+		<p class="m-0"><small>&copy; 2024 KI-JANG ENGINEERING. All Rights Reserved.</small></p>
+	</div>
+</footer>
+
+<button id="scrollToTopBtn" class="btn btn-light border">
+	<i class="bi bi-arrow-up"></i>
+</button>
+
+<!-- Bootstrap JS -->
+<script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="./jquery/jquery-3.7.1.min.js"></script>
+<script src="./main.js"></script>
+<script src="./business.js"></script>
+</body>
+</html>
