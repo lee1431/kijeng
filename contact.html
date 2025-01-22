@@ -82,6 +82,28 @@
     </div>
 </section>
 
+
+
+<section id="add-notice" class="section py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">새 공지사항 추가</h2>
+        <form id="noticeForm">
+            <div class="mb-3">
+                <label for="title" class="form-label">제목</label>
+                <input type="text" class="form-control" id="title" required>
+            </div>
+            <div class="mb-3">
+                <label for="content" class="form-label">내용</label>
+                <textarea class="form-control" id="content" required></textarea>
+            </div>
+			<div class="mb-3">
+				<label for="image">Image File:</label>
+				<input type="file" id="image" name="image" accept="image/*" required><br><br>
+			</div>
+            <button type="submit" class="btn btn-primary">공지사항 추가</button>
+        </form>
+    </div>
+</section>
 	
 <!-- Footer -->
 <footer class="footer d-flex align-items-center">
