@@ -23,12 +23,6 @@ async function fetchData() {
     }
 }
 
-// Pagenation
-function paginate(data, currentPage, pageSize) {
-	const start = (currentPage - 1) * pageSize;
-	const end = start + pageSize;
-	return data.datas.slice(start, end);
-}
 
 function renderData(data) {
   const container = document.getElementById('data-container');
@@ -39,56 +33,6 @@ function renderData(data) {
     container.appendChild(div);
   });
 }
-
-// 페이지네이션 버튼 생성
-function renderPagination(totalItems, currentPage, pageSize) {
-	
-	console.log(totalItems);
-	console.log(currentPage);
-	console.log(pageSize);
-  const pagination = document.getElementById('pagination');
-  pagination.innerHTML = ''; // 기존 버튼 제거
-  const totalPages = Math.ceil(totalItems / pageSize);
-
-  // 이전 버튼
-  const prevButton = document.createElement('button');
-  prevButton.textContent = 'Previous';
-  prevButton.disabled = currentPage === 1;
-  prevButton.addEventListener('click', () => updatePage(currentPage - 1));
-  pagination.appendChild(prevButton);
-
-  // 페이지 번호 버튼
-  for (let i = 1; i <= totalPages; i++) {
-	  
-    const button = document.createElement('button');
-    button.textContent = i;
-    button.className = i === currentPage ? 'active' : '';
-    button.addEventListener('click', () => updatePage(i));
-    pagination.appendChild(button);
-  }
-
-  // 다음 버튼
-  const nextButton = document.createElement('button');
-  nextButton.textContent = 'Next';
-  nextButton.disabled = currentPage === totalPages;
-  nextButton.addEventListener('click', () => updatePage(currentPage + 1));
-  pagination.appendChild(nextButton);
-}
-
-// 현재 페이지 업데이트
-let currentPage = 1;
-const pageSize = 5; // 한 페이지에 표시할 항목 수
-
-async function updatePage(page) {
-  const data = await fetchData();
-  console.log("111 "+ data);
-  currentPage = page;
-  const paginatedData = paginate(data, currentPage, pageSize);
-  renderData(paginatedData);
-  renderPagination(data.length, currentPage, pageSize);
-}
-
-updatePage(currentPage);
 
 async function fetchNotices() {
     const url = "https://api.github.com/repos/lee1431/gear/contents/notices.json";
@@ -140,6 +84,7 @@ document.getElementById('noticeForm').addEventListener('submit', async function 
 
     const title = document.getElementById('title').value;
     const content = document.getElementById('content').value;
+	const imageFile = document.getElementById("image").files[0];
 
     // 기존 JSON 파일을 가져와서 새 공지사항을 추가한 뒤 GitHub에 업데이트
     const { notices = [], sha } = await fetchNotices();
@@ -148,12 +93,17 @@ document.getElementById('noticeForm').addEventListener('submit', async function 
         alert('기존 공지사항 데이터를 가져오는 데 실패했습니다.');
         return;
     }
+	
+		const imagePath = `images/${Date.now()}_${imageFile.name}`;
+		await uploadFileToGitHub(imagePath, await fileToBase64(imageFile));
 
     // 새로운 공지사항 추가
     const newNotice = {
         title,
         content,
         date: new Date().toISOString().split('T')[0],
+		link: "#",
+		file: imagePath,
 		uid: crypto.randomUUID()
     };
     notices.push(newNotice);
@@ -165,15 +115,14 @@ document.getElementById('noticeForm').addEventListener('submit', async function 
         sha: sha // 기존 파일의 SHA 값을 사용하여 업데이트
     };
 	
-    var v = "ghp_R62pfNEz";
-    var vv = "nXVBQx2eywNo";
-    var vvv = "2veQ47EiGC3in7ek";	
+    var v = "ghp_qQQFxG8PkK0mLVzf2";
+    var vv = "xtis7dvxmHR5J3UAWRl";
     
     try {
         const updateResponse = await fetch("https://api.github.com/repos/lee1431/gear/contents/notices.json", {
             method: 'PUT',
             headers: {
-                'Authorization': `Bearer ${v}${vv}${vvv}`,
+                'Authorization': `Bearer ${v}${vv}`,
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(updateData)
@@ -190,6 +139,45 @@ document.getElementById('noticeForm').addEventListener('submit', async function 
         console.error("공지사항 추가 중 오류 발생:", error);
     }
 });
+
+
+// GitHub에 파일 업로드
+async function uploadFileToGitHub(filePath, content) {
+    const url = `https://api.github.com/repos/lee1431/gear/contents/${filePath}`;
+    const data = {
+        message: `Update ${filePath}`,
+        content: content,
+        branch: "main",
+    };
+
+	var v = "ghp_qQQFxG8PkK0mLVzf2";
+    var vv = "xtis7dvxmHR5J3UAWRl";
+	
+    const response = await fetch(url, {
+        method: "PUT",
+        headers: {
+            Authorization: `token ${v}${vv}`,
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+    });
+
+    if (!response.ok) {
+        const error = await response.json();
+        throw new Error(error.message || "Failed to upload file.");
+    }
+}
+
+// 파일을 Base64로 변환
+function fileToBase64(file) {
+    return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = () => resolve(reader.result.split(",")[1]); // Base64 데이터 추출
+        reader.onerror = (error) => reject(error);
+    });
+}
+
 
 // 초기 공지사항 데이터 로드
 fetchNotices().then(data => displayNotices(data.notices));
