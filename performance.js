@@ -12,7 +12,7 @@
 		if (section) {
 			showContent(section);
 		} else {
-			showContent("end");
+			showContent("endd");
 		}
 	}
 
