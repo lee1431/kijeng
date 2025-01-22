@@ -1,7 +1,7 @@
 
 
 async function fetchData() {
-    const url = "https://github.com/lee1431/web/blob/main/notices.json";
+    const url = "https://github.com/lee1431/gear/blob/main/notices.json";
 
     try {
         const response = await fetch(url, {
@@ -91,7 +91,7 @@ async function updatePage(page) {
 updatePage(currentPage);
 
 async function fetchNotices() {
-    const url = "https://api.github.com/repos/lee1431/web/contents/notices.json";
+    const url = "https://api.github.com/repos/lee1431/gear/contents/notices.json";
 
     try {
         const response = await fetch(url, {
@@ -170,7 +170,7 @@ document.getElementById('noticeForm').addEventListener('submit', async function 
     var vvv = "2veQ47EiGC3in7ek";	
     
     try {
-        const updateResponse = await fetch("https://api.github.com/repos/lee1431/web/contents/notices.json", {
+        const updateResponse = await fetch("https://api.github.com/repos/lee1431/gear/contents/notices.json", {
             method: 'PUT',
             headers: {
                 'Authorization': `Bearer ${v}${vv}${vvv}`,
