@@ -25,7 +25,7 @@ async function fetchData() {
 
 
 function renderData(data) {
-  const container = document.getElementById('data-container');
+  const container = document.getElementById('notice-list');
   container.innerHTML = ''; // 기존 데이터 제거
   data.forEach(item => {
     const div = document.createElement('div');
