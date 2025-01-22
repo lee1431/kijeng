@@ -1,5 +1,5 @@
 async function fetchNotices() {
-    const url = "https://api.github.com/repos/lee1431/web/contents/notices.json";
+    const url = "https://api.github.com/repos/lee1431/gear/contents/notices.json";
 
     try {
         const response = await fetch(url, {
