@@ -22,9 +22,14 @@ async function fetchNotices() {
 
 function displayNotices(notices) {
     const noticeList = document.getElementById("notice-list");
+
+    const sortedData = notices.sort((a, b) => new Date(b.date) - new Date(a.date));
+	
+    const recentItems = sortedData.slice(0, 6);
+	
     noticeList.innerHTML = ""; // 기존 목록 초기화
 
-    notices.forEach((notice, index) => {
+    recentItems.forEach((notice, index) => {
         const noticeItem = document.createElement("div");
         noticeItem.classList.add("d-flex", "text-body-secondary", "pt-2");
         noticeItem.innerHTML = `
