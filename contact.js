@@ -1,7 +1,7 @@
 
 
 async function fetchData() {
-    const url = "https://github.com/lee1431/gear/blob/main/notices.json";
+    const url = "https://github.com/lee1431/gear/blob/main/json/notices.json";
 
     try {
         const response = await fetch(url, {
@@ -35,7 +35,7 @@ function renderData(data) {
 }
 
 async function fetchNotices() {
-    const url = "https://api.github.com/repos/lee1431/gear/contents/notices.json";
+    const url = "https://api.github.com/repos/lee1431/gear/contents/json/notices.json";
 
     try {
         const response = await fetch(url, {
@@ -81,7 +81,7 @@ function displayNotices(notices) {
 
 // GitHub에 파일 업로드
 async function uploadFileToGitHub(filePath, content) {
-    const url = `https://api.github.com/repos/lee1431/gear/contents/${filePath}`;
+    const url = `https://api.github.com/repos/lee1431/gear/contents/json/${filePath}`;
     const data = {
         message: `Update ${filePath}`,
         content: content,
