@@ -1,7 +1,7 @@
 
 
 async function fetchData() {
-    const url = "https://github.com/lee1431/gear/blob/main/json/notices.json";
+    const url = "https://github.com/lee1431/kijangeng/blob/main/json/notices.json";
 
     try {
         const response = await fetch(url, {
@@ -35,7 +35,7 @@ function renderData(data) {
 }
 
 async function fetchNotices() {
-    const url = "https://api.github.com/repos/lee1431/gear/contents/json/notices.json";
+    const url = "https://api.github.com/repos/lee1431/kijangeng/contents/json/notices.json";
 
     try {
         const response = await fetch(url, {
@@ -70,7 +70,7 @@ function displayNotices(notices) {
                     <h5 class="card-title">${notice.title}</h5>
                     <h6 class="card-subtitle mb-2 text-muted">${notice.date}</h6>
                     <p class="card-text">${notice.content}</p>
-                    ${notice.uid ? `<a href="https://llsshh.com/contact.html?view=${notice.link}" class="card-link">자세히 보기</a>` : ""}
+                    ${notice.uid ? `<a href="https://kijangeng.co.kr/contact.html?view=${notice.link}" class="card-link">자세히 보기</a>` : ""}
                 </div>
             </div>
         `;
@@ -81,7 +81,7 @@ function displayNotices(notices) {
 
 // GitHub에 파일 업로드
 async function uploadFileToGitHub(filePath, content) {
-    const url = `https://api.github.com/repos/lee1431/gear/contents/json/${filePath}`;
+    const url = `https://api.github.com/repos/lee1431/kijangeng/contents/json/${filePath}`;
     const data = {
         message: `Update ${filePath}`,
         content: content,
