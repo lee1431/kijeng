@@ -78,68 +78,6 @@ function displayNotices(notices) {
     });
 }
 
-// 공지사항 추가 폼 제출 처리
-document.getElementById('noticeForm').addEventListener('submit', async function (e) {
-    e.preventDefault();
-
-    const title = document.getElementById('title').value;
-    const content = document.getElementById('content').value;
-	const imageFile = document.getElementById("image").files[0];
-
-    // 기존 JSON 파일을 가져와서 새 공지사항을 추가한 뒤 GitHub에 업데이트
-    const { notices = [], sha } = await fetchNotices();
-
-    if (!sha) {
-        alert('기존 공지사항 데이터를 가져오는 데 실패했습니다.');
-        return;
-    }
-	
-		const imagePath = `images/${Date.now()}_${imageFile.name}`;
-		await uploadFileToGitHub(imagePath, await fileToBase64(imageFile));
-
-    // 새로운 공지사항 추가
-    const newNotice = {
-        title,
-        content,
-        date: new Date().toISOString().split('T')[0],
-		link: "#",
-		file: imagePath,
-		uid: crypto.randomUUID()
-    };
-    notices.push(newNotice);
-
-    // GitHub에 업데이트할 데이터 설정
-    const updateData = {
-        message: "공지사항 업데이트",
-        content: btoa(unescape(encodeURIComponent(JSON.stringify(notices, null, 2)))),
-        sha: sha // 기존 파일의 SHA 값을 사용하여 업데이트
-    };
-	
-    var v = "ghp_qQQFxG8PkK0mLVzf2";
-    var vv = "xtis7dvxmHR5J3UAWRl";
-    
-    try {
-        const updateResponse = await fetch("https://api.github.com/repos/lee1431/gear/contents/notices.json", {
-            method: 'PUT',
-            headers: {
-                'Authorization': `Bearer ${v}${vv}`,
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(updateData)
-        });
-
-        if (updateResponse.ok) {
-            alert("공지사항이 성공적으로 추가되었습니다.");
-            document.getElementById('noticeForm').reset(); // 폼 초기화
-            setTimeout(function(){fetchNotices().then(data => displayNotices(data.notices));}, 5000);
-        } else {
-            console.error("공지사항 업데이트 실패:", updateResponse.status, updateResponse.statusText);
-        }
-    } catch (error) {
-        console.error("공지사항 추가 중 오류 발생:", error);
-    }
-});
-
 
 // GitHub에 파일 업로드
 async function uploadFileToGitHub(filePath, content) {
