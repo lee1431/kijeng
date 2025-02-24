@@ -106,84 +106,7 @@
 					<div class="container">
 						<div class="row">
 							<div class="col">
-								<img class="img-thumbnail img-fluid" src="./img/performence/2007.png" />
-							</div>
-							<div class="col">
-								<img class="img-thumbnail img-fluid" src="./img/performence/2008.png" />
-							</div>
-							<div class="col">
-								<img class="img-thumbnail img-fluid" src="./img/performence/2008-1.png" />
-							</div>
-						</div><br>
-						<div class="row">
-							<div class="col">
-								<img class="img-thumbnail img-fluid" src="./img/performence/2008-2.png" />
-							</div>
-							<div class="col">
-								<img class="img-thumbnail img-fluid" src="./img/performence/2008-2.png" />
-							</div>
-							<div class="col">
-								<img class="img-thumbnail img-fluid" src="./img/performence/2009.png" />
-							</div>
-						</div><br>
-						<div class="row">
-							<div class="col">
-								<img class="img-thumbnail img-fluid" src="./img/performence/2009-1.png" />
-							</div>
-							<div class="col">
-								<img class="img-thumbnail img-fluid" src="./img/performence/2010-00.png" />
-							</div>
-							<div class="col">
-								<img class="img-thumbnail img-fluid" src="./img/performence/2010-1.png" />
-							</div>
-						</div><br>
-						<div class="row">
-							<div class="col">
-								<img class="img-thumbnail img-fluid" src="./img/performence/2010-2.png" />
-							</div>
-							<div class="col">
-								<img class="img-thumbnail img-fluid" src="./img/performence/2010-3.png" />
-							</div>
-							<div class="col">
-								<img class="img-thumbnail img-fluid" src="./img/performence/2010-4.png" />
-							</div>
-						</div><br>
-						<div class="row">
-							<div class="col">
-								<img class="img-thumbnail img-fluid" src="./img/performence/2011.png" />
-							</div>
-							<div class="col">
-								<img class="img-thumbnail img-fluid" src="./img/performence/2011-1.png" />
-							</div>
-							<div class="col">
-								<img class="img-thumbnail img-fluid" src="./img/performence/2012.png" />
-							</div>
-						</div><br>
-						<div class="row">
-							<div class="col">
-								<img class="img-thumbnail img-fluid" src="./img/performence/2013.png" />
-							</div>
-							<div class="col">
-								<img class="img-thumbnail img-fluid" src="./img/performence/2014.png" />
-							</div>
-							<div class="col">
-								<img class="img-thumbnail img-fluid" src="./img/performence/2015.png" />
-							</div>
-						</div><br>
-						<div class="row">
-							<div class="col">
-								<img class="img-thumbnail img-fluid" src="./img/performence/2016.png" />
-							</div>
-							<div class="col">
-								<img class="img-thumbnail img-fluid" src="./img/performence/2017.png" />
-							</div>
-							<div class="col">
-								<img class="img-thumbnail img-fluid" src="./img/performence/2018.png" />
-							</div>
-						</div><br>
-						<div class="row">
-							<div class="col">
-								<img class="img-thumbnail img-fluid" src="./img/performence/2019.png" />
+								<img class="thumbnail img-thumbnail img-fluid" src="./img/performence/2019.png" onclick="showImage(this)" />
 							</div>
 							<div class="col">
 								<img class="img-thumbnail img-fluid" src="./img/performence/2020.png" />
@@ -192,16 +115,7 @@
 								<img class="img-thumbnail img-fluid" src="./img/performence/2021.png" />
 							</div>
 						</div><br>
-						<div class="row">
-							<div class="col">
-								<img class="img-thumbnail img-fluid" src="./img/performence/2022-1.png" />
-							</div>
-							<div class="col">
-								<img class="img-thumbnail img-fluid" src="./img/performence/2023-1.png" />
-							</div>
-							
-						</div>
-					</div>			
+					</div>
 				</div>
 				<div id="tab" class="content-section">
 					2
@@ -219,6 +133,21 @@
 		</div>
 	</div>
 </Section>
+
+<!-- 모달 -->
+<div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="imageModalLabel">확대된 이미지</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+                <img id="modalImage" src="" alt="이미지">
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- Footer -->
 <footer class="footer d-flex align-items-center">
