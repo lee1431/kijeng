@@ -5,6 +5,15 @@
     "content": "2024년도 에너지진단 실적",
     "link": "#",
     "type": "endd",
-    "imgfilepath": "./images/endd/2022.png"   
+    "imgfilepath": "./images/endd/2022.png"
+  },
+  {
+    "title": "2007 에너지진단 실적현황",
+    "content": "2007 에너지진단 실적현황",
+    "date": "2025-02-24",
+    "link": "#",
+    "jr": "endd",
+    "imgfilepath": "images/endd/1740410257651_2007 에너지진단 실적현황.png",
+    "uid": "f71d31a9-72f4-4ede-a354-bc9bcfd64fd9"
   }
 ]
