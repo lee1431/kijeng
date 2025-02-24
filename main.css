@@ -283,3 +283,18 @@
 		margin-right: .75rem;
 		margin-left: .75rem;
 	}
+
+	.thumbnail {
+		cursor: pointer;
+		width: 150px;
+		height: 100px;
+		object-fit: cover;
+		margin: 10px;
+		transition: transform 0.2s;
+	}
+	.thumbnail:hover {
+		transform: scale(1.1);
+	}
+	.modal-content img {
+		width: 100%;
+	}
