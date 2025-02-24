@@ -71,13 +71,10 @@ function displayNotices(imgList, sectionId) {
 
     imgList.forEach((il) => {
         const noticeItem = document.createElement("div");
+        noticeItem.classList.add("row);
         noticeItem.innerHTML = `
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <img class="thumbnail img-thumbnail img-fluid" src="https://raw.githubusercontent.com/lee1431/kijangeng/main/json/${il.imgfilepath}" onclick="showImage(this)" />
-                    </div>
-                </div>
+            <div class="col-md-6">
+                <img class="thumbnail img-thumbnail img-fluid" src="https://raw.githubusercontent.com/lee1431/kijangeng/main/json/${il.imgfilepath}" onclick="showImage(this)" />
             </div>
         `;
         imageListHtml.appendChild(noticeItem);
