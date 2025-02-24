@@ -71,7 +71,7 @@ function displayNotices(imgList, sectionId) {
 
     imgList.forEach((il) => {
         const noticeItem = document.createElement("div");
-        noticeItem.classList.add("d-flex justify-content-center");
+        noticeItem.classList.add("d-flex", "justify-content-center");
         noticeItem.innerHTML = `
             <img class="thumbnail img-thumbnail img-fluid" src="https://raw.githubusercontent.com/lee1431/kijangeng/main/json/${il.imgfilepath}" onclick="showImage(this)" />
         `;
