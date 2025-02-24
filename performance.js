@@ -89,8 +89,6 @@ function displayNotices(imgList, sectionId) {
 document.addEventListener("DOMContentLoaded", showSectionFromURL);
 
 function showImage(img) {
-    let modal = document.querySelector('.modal-dialog');
-    modal.style.marginRight = `${(window.innerWidth - modal.clientWidth) / 2}px`;
     
     document.getElementById('modalImage').src = img.src;
     new bootstrap.Modal(document.getElementById('imageModal')).show();
