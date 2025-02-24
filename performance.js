@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", showSectionFromURL);
 
 function showImage(img) {
     let modal = document.querySelector('.modal-dialog');
-    modal.style.marginTop = `${(window.innerHeight - modal.clientHeight) / 2}px`;
+    modal.style.marginRight = `${(window.innerWidth - modal.clientWidth) / 2}px`;
     
     document.getElementById('modalImage').src = img.src;
     new bootstrap.Modal(document.getElementById('imageModal')).show();
