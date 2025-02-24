@@ -5,7 +5,7 @@
     "content": "2024년도 기계설비 실적",
     "link": "#",
     "type": "machine",
-    "file": "./images/machine/2022.png"
+    "imgfilepath": "./images/machine/2022.png"
   },
   {
     "title": "ㄴㅁㅇㄹ",
@@ -13,7 +13,7 @@
     "date": "2025-02-17",
     "link": "#",
     "jr": "machine",
-    "file": "images/machine/1739805948757_logo.png",
+    "imgfilepath": "images/machine/1739805948757_logo.png",
     "uid": "f87f4c4c-9f4c-4917-a625-3a5cb5de6798"
   }
 ]
