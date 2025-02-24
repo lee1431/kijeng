@@ -71,11 +71,10 @@ function displayNotices(imgList, sectionId) {
 
     imgList.forEach((il) => {
         const noticeItem = document.createElement("div");
-        noticeItem.classList.add("col-md-6", "mb-4");
         noticeItem.innerHTML = `
             <div class="container">
                 <div class="row">
-                    <div class="col">
+                    <div class="col-md-6">
                         <img class="thumbnail img-thumbnail img-fluid" src="https://raw.githubusercontent.com/lee1431/kijangeng/main/json/${il.imgfilepath}" onclick="showImage(this)" />
                     </div>
                 </div>
