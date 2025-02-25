@@ -52,7 +52,7 @@ document.getElementById('noticeForm').addEventListener('submit', async function 
 	console.log("Json Name = "+jsonName);
 	
     try {
-        const updateResponse = await fetch("https://api.github.com/repos/lee1431/kijangeng/contents/json/"+ jsonName +".json", {
+        const updateResponse = await fetch("https://api.github.com/repos/lee1431/kijeng/contents/json/"+ jsonName +".json", {
             method: 'PUT',
             headers: {
                 'Authorization': `Bearer ${v}${vv}`,
@@ -180,7 +180,7 @@ async function fetchNotices(jsName) {
 	}
 	console.log(jsonFileName + " <= ?>?? ");
 	
-    const url = "https://api.github.com/repos/lee1431/kijangeng/contents/json/"+ jsonFileName +".json";
+    const url = "https://api.github.com/repos/lee1431/kijeng/contents/json/"+ jsonFileName +".json";
 
     try {
         const response = await fetch(url, {
@@ -217,7 +217,7 @@ function displayNotices(notices) {
                     <h5 class="card-title">${notice.title}</h5>
                     <h6 class="card-subtitle mb-2 text-muted">${notice.date}</h6>
                     <p class="card-text">${notice.content}</p>
-                    ${notice.uid ? `<a href="https://kijangeng.co.kr/contact.html?view=${notice.link}" class="card-link">자세히 보기</a>` : ""}
+                    ${notice.uid ? `<a href="https://kijeng.co.kr/contact.html?view=${notice.link}" class="card-link">자세히 보기</a>` : ""}
                 </div>
             </div>
         `;
