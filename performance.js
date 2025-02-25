@@ -89,10 +89,3 @@ function showImage(img) {
     
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-    const modal = document.querySelector(".modal");
-    if (modal) {
-        modal.style.width = "70vw";
-        modal.style.height = "70vh";
-    }
-});
