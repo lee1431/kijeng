@@ -296,8 +296,11 @@
 		transform: scale(1.1);
 	}
 	.modal-content img {
+		width: 100%;
+	}
+	.modal {
 		width: 70vw;
-		height: 70h;
+		height: 70vh;
 		max-width: 90%;
 		max-height: 90%;
 	}
