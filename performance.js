@@ -40,7 +40,7 @@ function showContent(sectionId) {
 }
 
 async function fetchNotices(jsName) {
-    const url = `https://api.github.com/repos/lee1431/kijangeng/contents/json/${jsName}.json`;
+    const url = `https://api.github.com/repos/lee1431/kijeng/contents/json/${jsName}.json`;
     
     try {
         const response = await fetch(url, {
@@ -73,7 +73,7 @@ function displayNotices(imgList, sectionId) {
         const noticeItem = document.createElement("div");
         noticeItem.classList.add("d-flex", "justify-content-center");
         noticeItem.innerHTML = `
-            <img class="img-thumbnail img-fluid" src="https://raw.githubusercontent.com/lee1431/kijangeng/main/json/${il.imgfilepath}" onclick="showImage(this)" />
+            <img class="img-thumbnail img-fluid" src="https://raw.githubusercontent.com/lee1431/kijeng/main/json/${il.imgfilepath}" onclick="showImage(this)" />
         `;
         imageListHtml.appendChild(noticeItem);
     });
