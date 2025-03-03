@@ -1,22 +1,5 @@
 [
   {
-    "title": "2022 기계설비 실적",
-    "date": "2024-11-04",
-    "content": "2024년도 기계설비 실적",
-    "link": "#",
-    "type": "machine",
-    "imgfilepath": "./images/machine/2022.png"
-  },
-  {
-    "title": "ㄴㅁㅇㄹ",
-    "content": "ㅁㄴㅇㄹ",
-    "date": "2025-02-17",
-    "link": "#",
-    "jr": "machine",
-    "imgfilepath": "images/machine/1739805948757_logo.png",
-    "uid": "f87f4c4c-9f4c-4917-a625-3a5cb5de6798"
-  },
-  {
     "title": "2022기계설비성능점검 실적현황",
     "content": "2022기계설비성능점검 실적현황",
     "date": "2025-03-03",
