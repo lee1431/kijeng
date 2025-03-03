@@ -69,14 +69,32 @@ function displayNotices(imgList, sectionId) {
 
     imageListHtml.innerHTML = ""; // 기존 목록 초기화
 
-    imgList.forEach((il) => {
+    imgList.sort((a, b) => new Date(b.date) - new Date(a.date));
+	
+	let row = document.createElement("div");
+    row.classList.add("row", "g-4"); // g-4는 간격 조정 (Bootstrap 5 기준)
+	
+    imgList.forEach((il, index) => {
         const noticeItem = document.createElement("div");
-        noticeItem.classList.add("d-flex", "justify-content-center");
+        noticeItem.classList.add("col-lg-4", "col-md-6", "col-sm-12", "text-center");
         noticeItem.innerHTML = `
-            <img class="img-thumbnail img-fluid" src="https://raw.githubusercontent.com/lee1431/kijeng/main/json/${il.imgfilepath}" onclick="showImage(this)" />
+            <img class="img-thumbnail" style="cursor: pointer; max-width: 90%;" src="https://raw.githubusercontent.com/lee1431/kijangeng/main/json/${il.imgfilepath}" onclick="showImage(this)" />
+			<h6 class="text-center mt-2">${il.title}</h6>
         `;
-        imageListHtml.appendChild(noticeItem);
+        row.appendChild(noticeItem);
+
+        // 3번째마다 새로운 row 생성
+        if ((index + 1) % 3 === 0) {
+            imageListHtml.appendChild(row);
+            row = document.createElement("div");
+            row.classList.add("row", "g-4");
+        }
     });
+
+    // 남은 이미지가 있으면 추가
+    if (row.children.length > 0) {
+        imageListHtml.appendChild(row);
+    }
 }
 
 // 페이지가 로드될 때 실행
