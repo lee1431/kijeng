@@ -69,9 +69,13 @@ function displayNotices(imgList, sectionId) {
 
     imageListHtml.innerHTML = ""; // 기존 목록 초기화
 
-    imgList.sort((a, b) => parseInt(b.imgfilepath.substring(11), 10) - parseInt(a.imgfilepath.substring(11), 10));
+    imgList.sort((a, b) => {
+	const numA = parseInt(a.imgfilepath.substring(12, 24), 10);
+	const numB = parseInt(b.imgfilepath.substring(12, 24), 10);
+	return numB - numA;
+    });
 	
-	let row = document.createElement("div");
+    let row = document.createElement("div");
     row.classList.add("row", "g-4"); // g-4는 간격 조정 (Bootstrap 5 기준)
 	
     imgList.forEach((il, index) => {
