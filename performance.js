@@ -69,7 +69,7 @@ function displayNotices(imgList, sectionId) {
 
     imageListHtml.innerHTML = ""; // 기존 목록 초기화
 
-    imgList.sort((a, b) => new Date(b.date) - new Date(a.date));
+    imgList.sort((a, b) => parseInt(b.imgfilepath.substring(11), 10) - parseInt(a.imgfilepath.substring(11), 10));
 	
 	let row = document.createElement("div");
     row.classList.add("row", "g-4"); // g-4는 간격 조정 (Bootstrap 5 기준)
