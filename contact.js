@@ -119,3 +119,31 @@ function fileToBase64(file) {
 
 // 초기 공지사항 데이터 로드
 fetchNotices().then(data => displayNotices(data.notices));
+
+
+var mapContainer = document.getElementById('map'),
+	mapOption = { 
+		center: new kakao.maps.LatLng(37.568044,127.045357),
+		level: 4
+	};
+var map = new kakao.maps.Map(mapContainer, mapOption);
+var imageSrc = 'https://kijeng.co.kr/marker_map.png',
+	imageSize = new kakao.maps.Size(180, 100),
+	imageOption = {offset: new kakao.maps.Point(27, 69)};
+var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption),
+	markerPosition = new kakao.maps.LatLng(37.568104,127.045357);
+var marker = new kakao.maps.Marker({
+  position: markerPosition,
+  image: markerImage
+});
+marker.setMap(map);
+
+
+function sendEmail() {
+	const recipient = "example@example.com";
+    const subject = document.getElementById('mailSubject').value;
+    const body = document.getElementById('mailBody').value;
+    const mailtoLink = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+	
+	window.location.href = mailtoLink;
+}
