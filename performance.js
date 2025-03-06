@@ -70,8 +70,16 @@ function displayNotices(imgList, sectionId) {
     imageListHtml.innerHTML = ""; // 기존 목록 초기화
 
     imgList.sort((a, b) => {
-	const numA = parseInt(a.imgfilepath.substring(12, 24), 10);
-	const numB = parseInt(b.imgfilepath.substring(12, 24), 10);
+	const extractedA = a.imgfilepath;
+	const partsA = extractedA.split("/");
+	const filenameA = partsA[2];
+	const numA = parseInt(filenameA.substring(0,13), 10);
+	
+	const extractedB = b.imgfilepath;
+	const partsB = extractedB.split("/");
+	const filenameB = partsB[2];
+	const numB = parseInt(filenameB.substring(0,13), 10);
+	    
 	return numB - numA;
     });
 	
