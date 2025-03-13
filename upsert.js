@@ -48,9 +48,7 @@ document.getElementById('noticeForm').addEventListener('submit', async function 
 	} else {
 		jsonName = fsdir;
 	}
-    
-	console.log("Json Name = "+jsonName);
-	
+    	
     try {
         const updateResponse = await fetch("https://api.github.com/repos/lee1431/kijeng/contents/json/"+ jsonName +".json", {
             method: 'PUT',
@@ -66,7 +64,8 @@ document.getElementById('noticeForm').addEventListener('submit', async function 
             document.getElementById('noticeForm').reset(); // 폼 초기화
             setTimeout(function(){fetchNotices(fsdir).then(data => displayNotices(data.notices));}, 5000);
         } else {
-            console.error("공지사항 업데이트 실패:", updateResponse.status, updateResponse.statusText);
+		alert("공지사항 업데이트 실패하였습니다. 새로고침 후 조금 뒤 다시 시도해 주세요!!");
+        	console.error("공지사항 업데이트 실패:", updateResponse.status, updateResponse.statusText);
         }
     } catch (error) {
         console.error("공지사항 추가 중 오류 발생:", error);
