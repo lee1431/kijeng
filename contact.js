@@ -70,7 +70,7 @@ function displayNotices(notices) {
                     <h5 class="card-title">${notice.title}</h5>
                     <h6 class="card-subtitle mb-2 text-muted">${notice.date}</h6>
                     <p class="card-text">${notice.content}</p>
-                    ${notice.uid ? `<a href="https://kijeng.co.kr/contact.html?view=${notice.link}" class="card-link">자세히 보기</a>` : ""}
+                    ${notice.link ? `<a href="https://kijeng.co.kr/contact.html?view=${notice.link}" class="card-link">자세히 보기</a>` : ""}
                 </div>
             </div>
         `;
