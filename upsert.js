@@ -50,7 +50,7 @@ document.getElementById('noticeForm').addEventListener('submit', async function 
 	}
     	
     try {
-        const updateResponse = await fetch("https://api.github.com/repos/lee1431/kijeng/contents/json/"+ jsonName +".json", {
+        const updateResponse = await fetch("https://api.github.com/repos/lee1431/kijangeng/contents/json/"+ jsonName +".json", {
             method: 'PUT',
             headers: {
                 'Authorization': `Bearer ${v}${vv}`,
@@ -179,7 +179,7 @@ async function fetchNotices(jsName) {
 	}
 	console.log(jsonFileName + " <= ?>?? ");
 	
-    const url = "https://api.github.com/repos/lee1431/kijeng/contents/json/"+ jsonFileName +".json";
+    const url = "https://api.github.com/repos/lee1431/kijangeng/contents/json/"+ jsonFileName +".json";
 
     try {
         const response = await fetch(url, {
