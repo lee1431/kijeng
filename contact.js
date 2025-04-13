@@ -81,7 +81,7 @@ function displayNotices(notices) {
 
 // GitHub에 파일 업로드
 async function uploadFileToGitHub(filePath, content) {
-    const url = `https://api.github.com/repos/lee1431/kijangeng/contents/json/${filePath}`;
+    const url = `https://api.github.com/repos/lee1431/kijeng/contents/json/${filePath}`;
     const data = {
         message: `Update ${filePath}`,
         content: content,
