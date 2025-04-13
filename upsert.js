@@ -39,8 +39,8 @@ document.getElementById('noticeForm').addEventListener('submit', async function 
         sha: sha // 기존 파일의 SHA 값을 사용하여 업데이트
     };
 	
-    var v = "ghp_qQQFxG8PkK0mLVzf2";
-    var vv = "xtis7dvxmHR5J3UAWRl";
+    var v = "ghp_wMfZAjhSdjNnTIEb";
+    var vv = "ozXeIpzsoYyBIA1LS55U";
 	
 	var jsonName = "";
 	if(fsdir == "kongg") {
@@ -84,8 +84,8 @@ async function uploadFileToGitHub(filePath, content) {
         branch: "main",
     };
 
-	var v = "ghp_qQQFxG8PkK0mLVzf2";
-    var vv = "xtis7dvxmHR5J3UAWRl";
+var v = "ghp_wMfZAjhSdjNnTIEb";
+    var vv = "ozXeIpzsoYyBIA1LS55U";
 	
     const response = await fetch(url, {
         method: "PUT",
