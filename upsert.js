@@ -76,6 +76,7 @@ document.getElementById('noticeForm').addEventListener('submit', async function 
 
 // GitHub에 파일 업로드
 async function uploadFileToGitHub(filePath, content) {
+	console.log("file path - "+filePath);
     const url = `https://api.github.com/repos/lee1431/kijeng/contents/json/${filePath}`;
     const data = {
         message: `Update ${filePath}`,
